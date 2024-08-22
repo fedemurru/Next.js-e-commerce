@@ -1,3 +1,5 @@
+import { NextResponse } from "next/server";
+
 const phones = [
 	{
 		id: 1,
@@ -31,4 +33,6 @@ const phones = [
 	},
 ];
 
-console.log(phones);
+export const GET = (req, res) => {
+	return NextResponse.json(phones);
+};
