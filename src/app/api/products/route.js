@@ -1,6 +1,6 @@
 import { NextResponse } from "next/server";
 
-const phones = [
+const data = [
 	{
 		id: 1,
 		name: "iPhone 14 Pro",
@@ -33,6 +33,13 @@ const phones = [
 	},
 ];
 
-export const GET = (req, res) => {
-	return NextResponse.json(phones);
+const findById = (id) => {
+	return data.find((el) => el.id === id);
 };
+
+export function GET(req, { params }) {
+	// const id = Number(params.id);
+	// const result = findById(id);
+
+	return NextResponse.json(data);
+}
