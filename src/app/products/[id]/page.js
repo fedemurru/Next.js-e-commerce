@@ -16,7 +16,7 @@ export default async function DataId({ params: { id } }) {
 	return (
 		<>
 			<Navbar />
-			<div className="mt-28 flex flex-col border">
+			<div className="mt-28 flex flex-col">
 				<div className="flex flex-col md:flex-row items-center">
 					<div className="w-full md:w-1/2">
 						<img
