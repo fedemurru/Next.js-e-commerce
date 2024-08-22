@@ -10,8 +10,9 @@ export default async function dataId({ params: { id } }) {
 
 	return (
 		<div>
-			<h1>{product.name}</h1>
-			<p>{product.description}</p>
+			<h1>Product: {product.name}</h1>
+			<p>Description: {product.description}</p>
+			<p>Price:{product.price}</p>
 		</div>
 	);
 }
