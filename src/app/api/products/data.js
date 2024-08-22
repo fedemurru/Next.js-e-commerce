@@ -1,6 +1,4 @@
-import { NextResponse } from "next/server";
-
-const data = [
+export const data = [
 	{
 		id: 1,
 		name: "iPhone 14 Pro",
@@ -32,14 +30,3 @@ const data = [
 			"The Xiaomi 13 Pro comes with a 6.73-inch AMOLED display, Snapdragon 8 Gen 2 chipset, and a Leica-branded triple-camera setup.",
 	},
 ];
-
-const findById = (id) => {
-	return data.find((el) => el.id === id);
-};
-
-export function GET(req, { params }) {
-	// const id = Number(params.id);
-	// const result = findById(id);
-
-	return NextResponse.json(data);
-}
