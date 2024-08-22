@@ -22,7 +22,7 @@ const ProductList = async () => {
 					<div
 						key={id}
 						className="bg-white borderrounded-md shadow-md flex flex-col items-center"
-						style={{ width: "250px", height: "300px" }} // Fixed width and height
+						style={{ width: "250px", height: "300px" }}
 					>
 						<Link href={`/products/${id}`}>
 							<div
@@ -31,10 +31,10 @@ const ProductList = async () => {
 							>
 								<div className="relative w-full h-full overflow-hidden">
 									<Image
-										src="/photo.jpg" // Use actual imageUrl
+										src="/photo.jpg"
 										alt={`Image of ${name}`}
-										layout="fill" // Fill container
-										objectFit="cover" // Cover the container
+										layout="fill"
+										objectFit="cover"
 										className="object-cover"
 									/>
 								</div>

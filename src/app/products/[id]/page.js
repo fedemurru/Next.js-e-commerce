@@ -1,5 +1,6 @@
 import BackButton from "@/app/components/BackButton";
 import Navbar from "@/app/components/Navbar";
+import Image from "next/image";
 
 export default async function DataId({ params: { id } }) {
 	const productId = Number(id);
