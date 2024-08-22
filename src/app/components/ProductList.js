@@ -16,7 +16,7 @@ const ProductList = async () => {
 	//console.log(data);
 
 	return (
-		<div className="flex justify-center px-4 mt-6">
+		<div className="flex justify-center px-4 mt-28">
 			<div className="flex flex-wrap justify-center gap-6 max-w-7xl w-full">
 				{data.map(({ id, name, imageUrl, price }) => (
 					<div
