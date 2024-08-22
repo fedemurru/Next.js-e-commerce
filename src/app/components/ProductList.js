@@ -14,7 +14,7 @@ const ProductList = async () => {
 	return (
 		<div className="flex flex-col">
 			{data.map(({ name, id }) => (
-				<Link key={id} href={`/products/`}>
+				<Link key={id} href={`/products/${id}`}>
 					{name}
 				</Link>
 			))}

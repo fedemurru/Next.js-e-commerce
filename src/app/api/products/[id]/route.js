@@ -10,7 +10,7 @@ export async function GET(req, { params }) {
 	const result = findById(id);
 	if (!result) {
 		return NextResponse.json({
-			message: `product with id of ${params.id} dose not exist`,
+			message: `product with id of ${params.id} does not exist`,
 		});
 	}
 	return NextResponse.json(result);
