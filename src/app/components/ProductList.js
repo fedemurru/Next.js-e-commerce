@@ -1,5 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
+import { NextResponse } from "next/server";
 
 const ProductList = async () => {
 	try {
@@ -49,7 +50,16 @@ const ProductList = async () => {
 				</div>
 			</div>
 		);
-	} catch (error) {}
+	} catch (error) {
+		const type = error.toString().split(":")[0];
+		const message = error.toString().split(":")[1];
+		return NextResponse.json({
+			error: {
+				message: message,
+				type: type,
+			},
+		});
+	}
 };
 
 export default ProductList;
