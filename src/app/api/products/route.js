@@ -6,7 +6,7 @@ export const GET = (req, res) => {
 		if (!data) {
 			return NextResponse.json(
 				{ message: "No data available" },
-				{ status: 404 } // Not Found status code
+				{ status: 404 }
 			);
 		}
 
@@ -19,7 +19,7 @@ export const GET = (req, res) => {
 				message: "An error occurred while processing your request.",
 				cause: error.message || "Unknown error",
 			},
-			{ status: 500 } // Internal Server Error status code
+			{ status: 500 }
 		);
 	}
 };
