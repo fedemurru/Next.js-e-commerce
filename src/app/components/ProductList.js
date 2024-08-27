@@ -7,7 +7,28 @@ const ProductList = async () => {
 		const res = await fetch("http://localhost:3000/api/products", {
 			cache: "no-store",
 		});
+
+		if (!res.ok) {
+			const errorData = await res.json();
+			return (
+				<div className="flex justify-center items-center h-screen">
+					<p className="text-red-500">
+						{errorData.message || "Failed to fetch products"}
+					</p>
+				</div>
+			);
+		}
+
 		const data = await res.json();
+
+		if (!Array.isArray(data) || data.length === 0) {
+			return (
+				<div className="flex justify-center items-center h-screen">
+					<p className="text-gray-500">No products available</p>
+				</div>
+			);
+		}
+
 		return (
 			<div className="flex justify-center px-4 mt-28">
 				<div className="flex flex-wrap justify-center gap-6 max-w-7xl w-full">
@@ -51,14 +72,14 @@ const ProductList = async () => {
 			</div>
 		);
 	} catch (error) {
-		const type = error.toString().split(":")[0];
-		const message = error.toString().split(":")[1];
-		return NextResponse.json({
-			error: {
-				message: message,
-				type: type,
-			},
-		});
+		console.error("Error fetching product data:", error);
+		return (
+			<div className="flex justify-center items-center h-screen">
+				<p className="text-red-500">
+					An unexpected error occurred: {error.message || "Unknown error"}
+				</p>
+			</div>
+		);
 	}
 };
 
