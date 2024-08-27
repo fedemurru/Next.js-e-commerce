@@ -1,45 +1,24 @@
 import Image from "next/image";
 import Link from "next/link";
+import { fetchFilteredProducts } from "./lib/fetchFilteredProducts";
 
-const ProductList = async () => {
+export default async function ProductList({ query }) {
 	try {
-		const res = await fetch("http://localhost:3000/api/products", {
-			cache: "no-store",
-		});
-
-		if (!res.ok) {
-			const errorData = await res.json();
-			return (
-				<div className="flex justify-center items-center h-screen">
-					<p className="text-red-500">
-						{errorData.message || "Failed to fetch products"}
-					</p>
-				</div>
-			);
-		}
-
-		const data = await res.json();
-
-		if (!Array.isArray(data) || data.length === 0) {
-			return (
-				<div className="flex justify-center items-center h-screen">
-					<p className="text-gray-500">No products available</p>
-				</div>
-			);
-		}
+		const filter = await fetchFilteredProducts(query);
+		console.log(filter);
 
 		return (
 			<div className="flex justify-center px-4 mt-28">
 				<div className="flex flex-wrap justify-center gap-6 max-w-7xl w-full">
-					{data.map(({ id, name, imageUrl, price }) => (
+					{filter.map(({ id, name, price }) => (
 						<div
 							key={id}
-							className="bg-white borderrounded-md shadow-md flex flex-col items-center"
+							className="bg-white border rounded-md shadow-md flex flex-col items-center"
 							style={{ width: "250px", height: "300px" }}
 						>
 							<Link href={`/products/${id}`}>
 								<div
-									className="w-full h-full flex flex-col  border-yellow-400 "
+									className="w-full h-full flex flex-col border-yellow-400"
 									style={{ width: "250px", height: "300px" }}
 								>
 									<div className="relative w-full h-full overflow-hidden">
@@ -80,6 +59,4 @@ const ProductList = async () => {
 			</div>
 		);
 	}
-};
-
-export default ProductList;
+}
