@@ -5,7 +5,8 @@ export default function GlobalError({ error }) {
 	return (
 		<html>
 			<body>
-				<h2>Something went wrong!{error}</h2>
+				<h2>Something went wrong!</h2>
+				<h4>{error.message}</h4>
 				<BackButton />
 			</body>
 		</html>
