@@ -13,17 +13,17 @@ export const GET = (req, { params }) => {
 		if (!id) {
 			return NextResponse.json(
 				{
-					message: `invalid product with id`,
+					message: `Invalid id`,
 				},
 				{ status: 400 }
 			);
 		}
-		const result = findById(id); // null
+		const result = findById(id);
 
 		if (!result) {
 			return NextResponse.json(
 				{
-					message: `product with id of ${params.id} does not exist`,
+					message: `Product with id of ${params.id} does not exist`,
 				},
 				{ status: 404 }
 			);
