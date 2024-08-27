@@ -5,7 +5,7 @@ import Image from "next/image";
 export default async function DataId({ params: { id } }) {
 	const productId = Number(id);
 
-	const data = await fetch(`http://localhost:3000/api/products/${productId}`, {
+	const data = await fetch(`http://localhost:3000/api/productss/${productId}`, {
 		cache: "no-store",
 	});
 	const product = await data.json();
