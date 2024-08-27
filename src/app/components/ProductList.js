@@ -1,6 +1,5 @@
 import Image from "next/image";
 import Link from "next/link";
-import { NextResponse } from "next/server";
 
 const ProductList = async () => {
 	try {
