@@ -20,9 +20,11 @@ export default async function DataId({ params: { id } }) {
 			<div className="mt-28 flex flex-col">
 				<div className="flex flex-col md:flex-row items-center">
 					<div className="w-full md:w-1/2">
-						<img
+						<Image
 							src="/photo.jpg"
 							alt={product.name}
+							width={100}
+							height={100}
 							className="object-cover w-full h-64 md:h-auto rounded"
 						/>
 					</div>
