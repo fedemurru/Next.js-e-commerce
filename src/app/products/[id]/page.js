@@ -5,7 +5,7 @@ import Image from "next/image";
 export default async function DataId({ params: { id } }) {
 	const productId = Number(id);
 
-	const data = await fetch(`http://localhost:3000/api/productss/${productId}`, {
+	const data = await fetch(`http://localhost:3000/api/products/${productId}`, {
 		cache: "no-store",
 	});
 	const product = await data.json();
@@ -36,7 +36,7 @@ export default async function DataId({ params: { id } }) {
 								{product.price}
 							</p>
 							<div className="mt-2 ml-4">
-								<BackButton />
+								<BackButton href={"/products"} />
 							</div>
 						</div>
 					</div>
