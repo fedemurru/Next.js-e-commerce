@@ -2,7 +2,7 @@ import BackButton from "@/app/components/BackButton";
 import Navbar from "@/app/components/Navbar";
 import Image from "next/image";
 
-export default async function DataId({ params: { id }, error }) {
+export default async function DataId({ params: { id } }) {
 	const productId = Number(id);
 
 	const data = await fetch(`http://localhost:3000/api/products/${productId}`, {

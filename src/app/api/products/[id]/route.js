@@ -32,8 +32,8 @@ export const GET = (req, { params }) => {
 		return NextResponse.json(result);
 	} catch (error) {
 		const errorArray = error.toString().split(":");
-		const errorType = errorArray[0];
-		const cause = errorArray[1];
+		const errorType = errorArray[0] || "Unknown Error";
+		const cause = errorArray[1] || "An unexpected error occurred";
 		return NextResponse.json(
 			{
 				error: {
