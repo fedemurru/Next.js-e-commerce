@@ -15,20 +15,26 @@ export default async function ProductList({ query }) {
 							<div
 								key={id}
 								className="bg-white border rounded-md shadow-md flex flex-col items-center"
-								style={{ width: "250px", height: "300px" }}
+								style={{
+									width: "252px",
+									height: "300px",
+								}}
 							>
 								<Link href={`/products/${id}`}>
 									<div
-										className="w-full h-full flex flex-col border-yellow-400"
-										style={{ width: "250px", height: "300px" }}
+										className="w-full h-full flex flex-col"
+										style={{
+											width: "250px",
+											height: "300px",
+										}}
 									>
-										<div className="relative w-full h-full overflow-hidden">
+										<div className="relative w-full h-full overflow-hidden rounded-t-md">
 											<Image
 												src="/photo.jpg"
 												alt={`Image of ${name}`}
 												layout="fill"
 												objectFit="cover"
-												className="object-center"
+												className="object-cover"
 											/>
 										</div>
 										<div className="w-full h-1/3 flex flex-col items-center p-4">
