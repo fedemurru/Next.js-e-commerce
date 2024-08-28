@@ -34,4 +34,18 @@ export const data = [
 		description:
 			"The Xiaomi 13 Pro comes with a 6.73-inch AMOLED display, Snapdragon 8 Gen 2 chipset, and a Leica-branded triple-camera setup.",
 	},
+	{
+		id: 6,
+		name: "Sony Xperia 1 IV",
+		price: "$1,199",
+		description:
+			"The Sony Xperia 1 IV offers a 6.5-inch 4K OLED display, Snapdragon 8 Gen 1 processor, and a versatile triple-camera system with ZEISS optics.",
+	},
+	{
+		id: 7,
+		name: "Oppo Find X5 Pro",
+		price: "$899",
+		description:
+			"The Oppo Find X5 Pro features a 6.7-inch AMOLED display, Snapdragon 8 Gen 1 processor, and a Hasselblad-tuned camera system with a 50MP main sensor.",
+	},
 ];
