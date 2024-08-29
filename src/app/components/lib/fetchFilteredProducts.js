@@ -10,18 +10,12 @@
 
 export async function fetchFilteredProducts(query) {
 	try {
-		// Construct the URL based on the presence of a query
-
-		// Fetch data from the API
-		console.log("process.env.BASE_URL_DEV", process.env.BASE_URL_DEV);
 		const res = await fetch(`${process.env.BASE_URL_DEV}/products`, {
-			cache: "no-store", // Ensure you are not caching for fresh data
+			cache: "no-store",
 		});
 
-		// Parse the JSON data from the response
 		if (res.ok) {
 			const products = await res.json();
-			// console.log("Fetched products:", products);
 
 			// Apply client-side filtering if query is provided
 			const filteredProducts = query
@@ -36,9 +30,7 @@ export async function fetchFilteredProducts(query) {
 		}
 		return res;
 	} catch (error) {
-		// Log the error for debugging
 		console.error("Error fetching product data:", error.message);
-		// Re-throw the error for further handling (if needed)
 		throw error;
 	}
 }
