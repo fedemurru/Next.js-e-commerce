@@ -16,12 +16,13 @@ function Search() {
 			params.delete("query");
 		}
 
-		router.replace(`${pathname}?${params.toString()}`);
+		router.push(`${pathname}?${params.toString()}`);
 	}
 
-	function handleKeyDown(event) {
-		if (event.key === "Enter") {
-			handleSearch(event.target.value);
+	function handleKeyDown(e) {
+		if (e.key === "Enter") {
+			handleSearch(e.target.value);
+			e.target.value = "";
 		}
 	}
 
