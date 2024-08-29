@@ -4,8 +4,8 @@ import { fetchFilteredProducts } from "./lib/fetchFilteredProducts";
 
 export default async function ProductList({ query }) {
 	try {
-		const filtered = fetchFilteredProducts(query);
-		// console.log(filter);
+		const filtered = await fetchFilteredProducts(query);
+		// console.log("data from api", filtered);
 
 		return (
 			<div className="flex justify-center px-4 mt-28">
@@ -17,7 +17,6 @@ export default async function ProductList({ query }) {
 								className="bg-white border rounded-md shadow-md flex flex-col items-center"
 								style={{
 									width: "252px",
-									height: "300px",
 								}}
 							>
 								<Link href={`/products/${id}`}>
