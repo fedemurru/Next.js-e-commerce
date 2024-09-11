@@ -1,14 +1,26 @@
 import { NextResponse } from "next/server";
-import { data } from "./data";
 import { PrismaClient } from "@prisma/client";
 
 const prisma = new PrismaClient();
 
-export default async function handler(req, res) {
-	if (req.method === "GET") {
-		const users = await prisma.user.findMany();
-		res.json(users);
-		console.log(users);
+export async function GET(request) {
+	try {
+		const products = await prisma.product.findMany();
+		return new Response(JSON.stringify(products), {
+			status: 200,
+			headers: {
+				"Content-Type": "application/json",
+			},
+		});
+	} catch (error) {
+		return new Response(JSON.stringify({ error: "Error fetching products" }), {
+			status: 500,
+			headers: {
+				"Content-Type": "application/json",
+			},
+		});
+	} finally {
+		await prisma.$disconnect();
 	}
 }
 
