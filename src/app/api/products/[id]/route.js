@@ -1,11 +1,5 @@
 import { NextResponse } from "next/server";
-import { data } from "../data";
-
-const findById = (id) => {
-	return data.find((el) => {
-		return el.id == id;
-	});
-};
+// import { data } from "../data";
 
 // /src/app/api/products/[id]/route.js
 import { PrismaClient } from "@prisma/client";
