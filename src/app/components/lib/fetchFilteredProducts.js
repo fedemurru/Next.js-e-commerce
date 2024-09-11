@@ -24,7 +24,7 @@ export async function fetchFilteredProducts(query) {
 				  )
 				: products;
 
-			console.log("KKK", filteredProducts);
+			//console.log("KKK", filteredProducts);
 
 			return filteredProducts;
 		}
