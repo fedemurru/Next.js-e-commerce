@@ -3,7 +3,7 @@ import ContactForm from "../components/ContactForm";
 
 const page = () => {
 	return (
-		<div>
+		<div className="min-h-screen flex items-center justify-center ">
 			<ContactForm />
 		</div>
 	);

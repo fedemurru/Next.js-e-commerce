@@ -1,8 +1,6 @@
-// app/components/SignupForm.js
-
-export default function SignupForm() {
+export default function ContactForm() {
 	return (
-		<form action="/api/signup" method="POST" className="max-w-md mx-auto mt-8">
+		<form action="/api/signup" method="POST" className="max-w-md mx-auto mt-8 ">
 			<h2 className="text-2xl font-bold mb-4">Let’s sign you up</h2>
 
 			<div className="grid grid-cols-2 gap-4 mb-4">
@@ -25,7 +23,7 @@ export default function SignupForm() {
 					<input
 						type="text"
 						name="lastName"
-						placeholder="doe"
+						placeholder="Doe"
 						className="mt-1 p-2 w-full border border-gray-300 rounded-md"
 						required
 					/>
