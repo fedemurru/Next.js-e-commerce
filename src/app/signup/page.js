@@ -18,7 +18,11 @@ export default function ContactForm() {
 	};
 
 	return (
-		<form action="/api/signup" method="POST" className="max-w-md mx-auto mt-8 ">
+		<form
+			action="/api/signup"
+			method="POST"
+			className="max-w-md mx-auto mt-8 text-black "
+		>
 			<h2 className="text-2xl font-bold mb-4">Let’s sign you up</h2>
 
 			<div className="grid grid-cols-2 gap-4 mb-4">
