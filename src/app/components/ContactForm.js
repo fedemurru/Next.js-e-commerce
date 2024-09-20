@@ -1,4 +1,22 @@
+"use client";
+
+import { useState } from "react";
+
 export default function ContactForm() {
+	const [formData, setFormData] = useState({
+		firstName: "",
+		lastName: "",
+		email: "",
+		password: "",
+	});
+
+	const handleFormInput = (e) => {
+		const { name, value } = e.target;
+		setFormData((prevState) => {
+			return { ...prevState, [name]: value };
+		});
+	};
+
 	return (
 		<form action="/api/signup" method="POST" className="max-w-md mx-auto mt-8 ">
 			<h2 className="text-2xl font-bold mb-4">Let’s sign you up</h2>
@@ -14,6 +32,7 @@ export default function ContactForm() {
 						placeholder="John"
 						className="mt-1 p-2 w-full border border-gray-300 rounded-md"
 						required
+						onChange={handleFormInput}
 					/>
 				</div>
 				<div>
@@ -26,6 +45,7 @@ export default function ContactForm() {
 						placeholder="Doe"
 						className="mt-1 p-2 w-full border border-gray-300 rounded-md"
 						required
+						onChange={handleFormInput}
 					/>
 				</div>
 			</div>
@@ -40,6 +60,7 @@ export default function ContactForm() {
 					placeholder="Work email or Personal email"
 					className="mt-1 p-2 w-full border border-gray-300 rounded-md"
 					required
+					onChange={handleFormInput}
 				/>
 			</div>
 
@@ -53,6 +74,7 @@ export default function ContactForm() {
 					placeholder="Minimum of 3 characters"
 					className="mt-1 p-2 w-full border border-gray-300 rounded-md"
 					required
+					onChange={handleFormInput}
 				/>
 			</div>
 
