@@ -19,3 +19,13 @@ model Product {
   price       String
   description String
 }
+
+model User {
+  id        Int      @id @default(autoincrement())
+  createdAt DateTime @default(now())
+  email     String   @unique
+  name      String
+  password  String
+
+  @@map("users")
+}

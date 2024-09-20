@@ -16,13 +16,25 @@ export default function ContactForm() {
 			return { ...prevState, [name]: value };
 		});
 	};
-
+	const handleSubmit = async (e) => {
+		e.preventDefault();
+		try {
+			// console.log('formData', formData);
+			const res = await fetch("/api/signup", {
+				method: "POST",
+				body: JSON.stringify(formData),
+				headers: {
+					"Content-Type": "application/json",
+				},
+			});
+			const body = await res.json();
+			console.log("res", body);
+			if (res.ok) {
+			}
+		} catch (error) {}
+	};
 	return (
-		<form
-			action="/api/signup"
-			method="POST"
-			className="max-w-md mx-auto mt-8 text-black "
-		>
+		<form onSubmit={handleSubmit} className="max-w-md mx-auto mt-8 text-black ">
 			<h2 className="text-2xl font-bold mb-4">Let’s sign you up</h2>
 
 			<div className="grid grid-cols-2 gap-4 mb-4">
