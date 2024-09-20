@@ -14,6 +14,8 @@ export const POST = async (req, res) => {
 		});
 		// 12345gdhdh
 
+		//code
+
 		if (matchingUser == null) {
 			const hash = await bcrypt.hash(password, 10);
 
