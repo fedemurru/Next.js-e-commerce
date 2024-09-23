@@ -11,7 +11,7 @@ export default async function ProductList({ query }) {
 			<div className="flex justify-center px-4 mt-28">
 				<div className="flex flex-wrap justify-center gap-6 max-w-7xl w-full">
 					{filtered.length > 0 ? (
-						filtered.map(({ id, name, price }) => (
+						filtered.map(({ id, name, price, image }) => (
 							<div
 								key={id}
 								className="bg-white border rounded-md shadow-md flex flex-col items-center"
@@ -29,7 +29,7 @@ export default async function ProductList({ query }) {
 									>
 										<div className="relative w-full h-full overflow-hidden rounded-t-md">
 											<Image
-												src="/photo.jpg"
+												src={image}
 												alt={`Image of ${name}`}
 												layout="fill"
 												objectFit="cover"
